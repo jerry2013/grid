@@ -37,28 +37,22 @@ window.onload = () => {
   };
   getInfo();
 
-  const refresh = _.throttle(
-    () => {
-      const { width, height, maxWidth } = galleryModeTileSize({
-        n: form.n.valueAsNumber,
-        container,
-        minTileAspectRatio: form.ar.valueAsNumber,
-        idealAR: form.ar.valueAsNumber,
-        maxColumns: form.columns.valueAsNumber,
-      });
+  const refresh = () => {
+    const { width, height, maxWidth } = galleryModeTileSize({
+      n: form.n.valueAsNumber,
+      container,
+      minTileAspectRatio: form.ar.valueAsNumber,
+      idealAR: form.ar.valueAsNumber,
+      maxColumns: form.columns.valueAsNumber,
+    });
 
-      // container.setAttribute("data-ar", `TileAR=${format(idealAR)} (${columns})`);
-      container.style.setProperty("--tileW", width);
-      container.style.setProperty("--tileH", height);
-      container.style.setProperty("--tileMaxW", maxWidth);
+    // container.setAttribute("data-ar", `TileAR=${format(idealAR)} (${columns})`);
+    container.style.setProperty("--tileW", width);
+    container.style.setProperty("--tileH", height);
+    container.style.setProperty("--tileMaxW", maxWidth);
 
-      draw(form.n.valueAsNumber);
-    },
-    100,
-    {
-      leading: false,
-    }
-  );
+    draw(form.n.valueAsNumber);
+  };
 
   document
     .getElementById("args")
