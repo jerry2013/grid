@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "destructuring": true
+    }
+  },
+  "globals": {
+    "_": true,
+    "interact": true
+  },
+  "rules": {
+    "strict": "off",
+    "arrow-parens": "off",
+    "operator-linebreak": [
+      "warn",
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before"
+        }
+      }
+    ],
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off"
+  }
+}

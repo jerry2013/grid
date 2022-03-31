@@ -1,0 +1,107 @@
+body {
+  color: #ccc;
+  background-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  font: 16px/1.2 Arial, Helvetica, sans-serif;
+}
+
+form > section {
+  display: inline-block;
+  padding-right: 2em;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 3.5em;
+}
+
+#call-view {
+  position: relative;
+
+  width: 600px;
+  height: 450px;
+
+  background: #222;
+
+  outline: 1px dotted #f99;
+
+  margin-top: 2em;
+
+  padding-top: 36px;
+  padding-bottom: 55px;
+
+  &::before {
+    content: attr(data-info) " " attr(data-ar);
+    position: absolute;
+    top: calc(-1em - 4px);
+    right: 0;
+    left: 0;
+    padding: 2px 0;
+    border-radius: 3px;
+    outline: 1px dotted #999;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+ul {
+  width: 100%;
+  height: 100%;
+
+  counter-reset: tiles;
+
+  background-color: #000;
+
+  overflow: visible;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  justify-items: stretch;
+
+  li {
+    position: relative;
+    display: block;
+    width: var(--tileW, unset);
+    height: var(--tileH, unset);
+    max-width: var(--tileMaxW, unset);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid #99f;
+      border-radius: 0.5em;
+    }
+
+    &::after {
+      counter-increment: tiles;
+      content: "tile " counter(tiles);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.25em 0.5em;
+      border-radius: 0 0 0.5em 0;
+      background-color: #80808080;
+    }
+  }
+}

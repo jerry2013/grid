@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>grid view</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.11/interact.min.js" integrity="sha512-8hBiY/UwsVieg6BAQbtKG1HOFx8tJs1Iowlr8W1ju7ROpT9sY8JtbMY+xcDqDKGXKwkL7RA2Tkg4c5m3qNx7YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div>
+    <form action="GET" onsubmit="() => false">
+      <section id="args">
+        <label>n:
+          <input name="n" type="number" value="6" min="1" max="25">
+        </label>
+        <label>targetTileAR:
+          <input name="ar" type="number" value="1.5" min="1" max="2" step=0.1>
+        </label>
+        <label>maxColumns:
+          <input name="columns" type="number" value="0" min="0"></select>
+        </label>
+      </section>
+      <section id="res">
+        <label>device:
+          <select name="resolution">
+            <option value="">...</option>
+            <option value="360 x 760">Samsung S10</option>
+            <option value="360 x 800">Samsung S20</option>
+            <option value="412 x 915">Samsung S20 Ultra</option>
+            <option value="375 x 667">Apple iPhone 8</option>
+            <option value="414 x 736">Apple iPhone 8 Plus</option>
+            <option value="360 x 780">Apple iPhone 12 mini</option>
+            <option value="390 x 844">Apple iPhone 12/Pro</option>
+            <option value="428 x 926">Apple iPhone 12 Pro Max</option>
+            <option value="393 x 830">Google Pixel 4</option>
+            <option value="412 x 869">Google Pixel 4 XL</option>
+            <option value="360 x 780">Huawei P30</option>
+            <option value="360 x 640">Sony Xperia Z5</option>
+            <option value="834 x 1112">Apple iPad Air</option>
+            <option value="820 x 1180">Apple iPad Air (2020)</option>
+            <option value="768 x 1024">Apple iPad Mini</option>
+            <option value="1024 x 1366">Apple iPad Pro 12.9</option>
+          </select>
+          <label>
+            <input name="orientation" type="checkbox">portrait
+          </label>
+        </label>
+      </section>
+    </form>
+
+    <section id="call-view">
+      <ul></ul>
+    </section>
+  </div>
+</body>
+
+</html>
